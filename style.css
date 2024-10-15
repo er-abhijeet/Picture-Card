@@ -1,0 +1,153 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    
+    background-color:#478CCF ;
+}
+.container{
+    height: 96vh;
+    width: 76vw;
+    border-radius: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+    padding: 0px 0px;
+    position: relative;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    left: calc(var(--i)* 70px + 210px);
+    z-index: var(--i);
+    animation: moveback 1s ease 0s 1;
+}
+@keyframes moveback {    
+    0% {
+        transform: translateX(0px);
+        z-index: 11;
+    }
+    50% {
+        transform: translateX(-200px);       
+        
+    }
+    100%{
+        transform: translateX(0px);
+        z-index: var(--i);
+    }
+    
+}
+.card.active {
+    animation: move 1s ease 0s 1;
+    transition: z-index 2s ;
+    z-index: 11;
+}
+
+@keyframes move {
+    0%{
+        transform: translateX(0px);
+        z-index: var(--i);
+    }
+    50% {
+        transform: translateX(-200px);
+        z-index: var(--i);
+    }
+    100% {
+        transform: translateX(0px);
+        z-index: 11;
+    }
+}
+
+.pic-container{    
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+    background-color: white;
+    padding: 2px;
+    border-radius: 20px;
+    position: relative;
+}
+.pic-container::after{
+    content: '';
+    height: 26px;
+    width: 26px;
+    background-color: white;
+    position: absolute;
+    bottom: -5px;
+    transform: rotate(45deg);
+}
+.pic-container img{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 20px;
+    position: relative;
+    z-index: 7;    
+}
+.coins{
+    display: flex;
+    justify-content: center;
+}
+.coin-container{
+    text-align: center; 
+    position: relative;
+    width: 50px;  
+    margin-left:10px;
+    margin-right: 10px;
+    margin-top: 400px
+}
+
+.coin-container img{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: solid 2px white;
+}
+
+.pin.active{
+    opacity: 1;
+    top: 400px;
+    transition: all 0.3s ease-in-out 1s;
+}
+.pin{
+    position: absolute;
+    z-index: 15;
+    content: 'emma olivia';
+    width: 200px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: white;
+    top: 410px;
+    left: calc(var(--d)* 70px + 238px);
+    text-align: center;
+    opacity: 0;
+    
+}
+.p1{
+    font-weight: 600;
+    font-size: 18px;
+    margin: 6px;
+}
+.p2{
+    color: #4535C1;
+    position: relative;
+    z-index: 10;
+}
+.pin::after{
+    content: '';
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    position: absolute;
+    bottom: -8px;
+    left: 45.5%;
+    transform: rotate(45deg)
+}
